@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: emoji
+      POSTGRES_USER: emoji
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U emoji -d emoji"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg://emoji:${POSTGRES_PASSWORD}@db:5432/emoji
+      ADMIN_INVITE: ${ADMIN_INVITE:?Set ADMIN_INVITE}
+      TEACHER_INVITE: ${TEACHER_INVITE:?Set TEACHER_INVITE}
+      AI_SERVICE_TOKEN: ${AI_SERVICE_TOKEN:?Set AI_SERVICE_TOKEN}
+      AI_THRESHOLD: "0.6"
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  postgres_data:

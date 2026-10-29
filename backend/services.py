@@ -21,7 +21,7 @@ class Service:
     def register(self,p):
         if p.role!='student':
             expected=self.config.get(p.role+'_invite','')
-            if not expected or not hmac.compare_digest(p.invite_code,expected): fail(403,'该角色需要有效邀请码')
+            if not expected or not hmac.compare_digest(p.invite_code.encode(),expected.encode()): fail(403,'该角色需要有效邀请码')
         if self.db.scalar(select(User).where(User.username==p.username)): fail(409,'用户名已存在')
         user=User(username=p.username,password_hash=hash_password(p.password),role=p.role,email=p.email)
         self.db.add(user); self.db.flush(); self.audit(user,'register'); self.db.commit(); return public(user)

@@ -128,7 +128,7 @@ def create_app(database_url=None,config=None):
         return Response(s.export(u,**f),media_type='text/csv; charset=utf-8',headers={'Content-Disposition':'attachment; filename=emoji-records.csv'})
     @app.post('/api/ai/emoji-results')
     def ai(p:AIInput,x_ai_token:str=Header(default=''),s:Service=Depends(service)):
-        if not cfg['ai_token'] or not hmac.compare_digest(x_ai_token,cfg['ai_token']): fail(401,'AI 服务认证失败')
+        if not cfg['ai_token'] or not hmac.compare_digest(x_ai_token.encode(),cfg['ai_token'].encode()): fail(401,'AI 服务认证失败')
         return ok(s.ai_record(p))
     web=Path(__file__).resolve().parent.parent/'web'
     if web.exists():
