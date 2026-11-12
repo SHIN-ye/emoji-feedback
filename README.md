@@ -5,13 +5,17 @@
 先阅读 [完整项目计划书](docs/项目计划书.md) 和 [需求与设计](docs/需求与设计.md)。执行进度及真实验收边界见 [测试报告](docs/测试报告.md)。
 
 ## 本地运行
-需要 Python 3.12。Windows PowerShell，在本目录执行：
+需要 Python 3.15.2。Windows PowerShell，在本目录执行：
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
 .\.venv\Scripts\python.exe -m scripts.seed --demo
 .\start.ps1
 ```
+
+请确保上述 `python` 指向 Python 3.15.2。本机的独立解释器位于
+`$env:LOCALAPPDATA\Programs\PythonProject3152\tools\python.exe`；若系统没有配置 Python，可用
+`& "$env:LOCALAPPDATA\Programs\PythonProject3152\tools\python.exe" -m venv .venv` 创建环境。
 初始化命令会输出随机演示密码，账号为 admin、teacher、student、student2。不会自动覆盖已有账号。演示数据是人工合成数据，记录标识 DEMO_SYNTHETIC；课堂有效期为初始化后的12小时。过期后由管理员创建新课堂并安排学生。
 
 访问 http://127.0.0.1:8000 ，API 文档 http://127.0.0.1:8000/docs 。本地默认 SQLite 自动创建 emoji.db；正式部署配置 DATABASE_URL 使用 PostgreSQL。数据库和密钥不进入 Git。

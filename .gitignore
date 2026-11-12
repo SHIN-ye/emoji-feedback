@@ -1,4 +1,6 @@
 .venv/
+.venv-backup-*/
+.venv-upgrade-check/
 __pycache__/
 .pytest_cache/
 *.db
