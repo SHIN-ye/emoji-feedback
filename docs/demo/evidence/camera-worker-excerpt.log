@@ -1,0 +1,3 @@
+2026-11-12 18:55:01,172 INFO HTTP Request: POST http://127.0.0.1:58730/api/ai/emoji-results "HTTP/1.1 200 OK"
+2026-11-12 18:55:01,173 INFO Emotion=fear confidence=0.838 result={'accepted': True, 'duplicate': False, 'id': 1}
+2026-11-12 18:55:13,184 INFO Stopped: sampled_frames=8 accepted_results=1

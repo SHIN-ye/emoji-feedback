@@ -1,0 +1,118 @@
+{
+  "dataset": "Jeneral/fer-2013, test split",
+  "dataset_sha256": "62363a3b17f8623db20afbe7d65a701a8e1431b53e035a09b96b8ef24bbc7700",
+  "deepface": "0.0.93",
+  "labels": [
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise",
+    "neutral"
+  ],
+  "samples": 7178,
+  "correct": 4084,
+  "accuracy": 0.5689607132906102,
+  "macro_recall": 0.5398523142765321,
+  "per_class": {
+    "angry": {
+      "samples": 958,
+      "recall": 0.4394572025052192
+    },
+    "disgust": {
+      "samples": 111,
+      "recall": 0.45045045045045046
+    },
+    "fear": {
+      "samples": 1024,
+      "recall": 0.4111328125
+    },
+    "happy": {
+      "samples": 1774,
+      "recall": 0.7750845546786922
+    },
+    "sad": {
+      "samples": 1247,
+      "recall": 0.4081796311146752
+    },
+    "surprise": {
+      "samples": 831,
+      "recall": 0.717208182912154
+    },
+    "neutral": {
+      "samples": 1233,
+      "recall": 0.5774533657745337
+    }
+  },
+  "threshold": 0.6,
+  "accepted": 6043,
+  "correct_accepted": 3737,
+  "coverage": 0.8418779604346615,
+  "accepted_accuracy": 0.6184014562303491,
+  "confusion_matrix_rows_true_columns_predicted": [
+    [
+      421,
+      13,
+      133,
+      68,
+      153,
+      24,
+      146
+    ],
+    [
+      29,
+      50,
+      13,
+      3,
+      10,
+      0,
+      6
+    ],
+    [
+      99,
+      4,
+      421,
+      61,
+      191,
+      92,
+      156
+    ],
+    [
+      56,
+      4,
+      94,
+      1375,
+      67,
+      34,
+      144
+    ],
+    [
+      133,
+      6,
+      177,
+      122,
+      509,
+      21,
+      279
+    ],
+    [
+      20,
+      1,
+      90,
+      49,
+      22,
+      596,
+      53
+    ],
+    [
+      90,
+      3,
+      126,
+      116,
+      168,
+      18,
+      712
+    ]
+  ]
+}

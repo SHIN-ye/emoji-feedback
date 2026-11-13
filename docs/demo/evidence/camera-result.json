@@ -1,0 +1,46 @@
+{
+  "worker_exit": 0,
+  "records": [
+    {
+      "id": 1,
+      "user_id": null,
+      "session_id": 1,
+      "emoji": "fear",
+      "timestamp": "2026-11-12T10:55:00.990414Z",
+      "source": "AI",
+      "confidence": 0.8381988525390625,
+      "device_id": "camera-1",
+      "event_id": "1c3216f7-945d-4190-9ecd-6a2b3d4d3a38"
+    }
+  ],
+  "dashboard": {
+    "total": 1,
+    "participants": 0,
+    "counts": {
+      "happy": 0,
+      "neutral": 0,
+      "sad": 0,
+      "angry": 0,
+      "surprise": 0,
+      "fear": 1,
+      "disgust": 0
+    },
+    "sources": {
+      "AI": 1
+    },
+    "timeline": [
+      {
+        "time": "2026-11-12T10:55:00Z",
+        "happy": 0,
+        "neutral": 0,
+        "sad": 0,
+        "angry": 0,
+        "surprise": 0,
+        "fear": 1,
+        "disgust": 0
+      }
+    ],
+    "updated_at": "2026-11-12T10:55:13.850618Z"
+  },
+  "passed": true
+}
