@@ -1,4 +1,5 @@
 .venv/
+.venv-ai/
 .venv-backup-*/
 .venv-upgrade-check/
 __pycache__/
